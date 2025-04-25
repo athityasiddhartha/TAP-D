@@ -1,20 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-LPJNXTWB7H"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-LPJNXTWB7H"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-LPJNXTWB7H');
+  </script>
 
-  gtag('config', 'G-LPJNXTWB7H');
-</script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>TAP'D - Connections Matter</title>
   <link rel="icon" type="image/png" href="favicon.png" />
   <link href="https://fonts.googleapis.com/css2?family=Exo+2&display=swap" rel="stylesheet">
+
   <style>
     * { box-sizing: border-box; }
 
@@ -27,7 +28,7 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: space-between;
+      justify-content: flex-start;
       text-align: center;
       padding: 40px 20px;
     }
@@ -36,7 +37,7 @@
       position: relative;
       width: 220px;
       height: 220px;
-      margin-top: 30px;
+      margin-top: 20px;
     }
 
     .ring {
@@ -60,18 +61,18 @@
       animation: fade 1.2s linear infinite;
     }
 
-    .bar:nth-child(1)  { transform: rotate(0deg);    animation-delay: 0s;   }
-    .bar:nth-child(2)  { transform: rotate(30deg);   animation-delay: 0.1s; }
-    .bar:nth-child(3)  { transform: rotate(60deg);   animation-delay: 0.2s; }
-    .bar:nth-child(4)  { transform: rotate(90deg);   animation-delay: 0.3s; }
-    .bar:nth-child(5)  { transform: rotate(120deg);  animation-delay: 0.4s; }
-    .bar:nth-child(6)  { transform: rotate(150deg);  animation-delay: 0.5s; }
-    .bar:nth-child(7)  { transform: rotate(180deg);  animation-delay: 0.6s; }
-    .bar:nth-child(8)  { transform: rotate(210deg);  animation-delay: 0.7s; }
-    .bar:nth-child(9)  { transform: rotate(240deg);  animation-delay: 0.8s; }
-    .bar:nth-child(10) { transform: rotate(270deg);  animation-delay: 0.9s; }
-    .bar:nth-child(11) { transform: rotate(300deg);  animation-delay: 1.0s; }
-    .bar:nth-child(12) { transform: rotate(330deg);  animation-delay: 1.1s; }
+    .bar:nth-child(1)  { transform: rotate(0deg); animation-delay: 0s; }
+    .bar:nth-child(2)  { transform: rotate(30deg); animation-delay: 0.1s; }
+    .bar:nth-child(3)  { transform: rotate(60deg); animation-delay: 0.2s; }
+    .bar:nth-child(4)  { transform: rotate(90deg); animation-delay: 0.3s; }
+    .bar:nth-child(5)  { transform: rotate(120deg); animation-delay: 0.4s; }
+    .bar:nth-child(6)  { transform: rotate(150deg); animation-delay: 0.5s; }
+    .bar:nth-child(7)  { transform: rotate(180deg); animation-delay: 0.6s; }
+    .bar:nth-child(8)  { transform: rotate(210deg); animation-delay: 0.7s; }
+    .bar:nth-child(9)  { transform: rotate(240deg); animation-delay: 0.8s; }
+    .bar:nth-child(10) { transform: rotate(270deg); animation-delay: 0.9s; }
+    .bar:nth-child(11) { transform: rotate(300deg); animation-delay: 1.0s; }
+    .bar:nth-child(12) { transform: rotate(330deg); animation-delay: 1.1s; }
 
     @keyframes fade {
       0%   { opacity: 1; }
@@ -90,58 +91,59 @@
     h1 {
       font-size: 4.5rem;
       color: #F9F9F7;
-      margin: 15px 0 0px;
+      margin: 20px 0 6px;
     }
 
     p {
-      font-size: 2rem;
+      font-size: 1.8rem;
       color: #5E6A78;
-      margin-bottom: 15px;
+      margin-bottom: 24px;
+      max-width: 90vw;
     }
 
-    /* FORM AT BOTTOM */
     .lead-form {
       display: flex;
-      flex-direction: row;
       align-items: center;
       justify-content: center;
       flex-wrap: wrap;
-      margin-bottom: 80px;
+      margin-bottom: 60px;
+      width: 100%;
     }
 
-.input-wrapper {
-  display: flex;
-  align-items: center;
-  overflow: hidden;
-  border-radius: 30px;
-  height: 50px;
-}
+    .input-wrapper {
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      border-radius: 30px;
+      height: 50px;
+      background-color: white;
+    }
 
-  .lead-form input[type="email"] {
-  height: 50px;
-  padding: 0 18px;
-  border: none;
-  font-size: 1.1em;
-  width: 300px;
-  outline: none;
-  border-radius: 25px 0 0 25px;
-  font-family: 'Exo 2', sans-serif;
-  line-height: 50px;
-}
+    .lead-form input[type="email"] {
+      height: 50px;
+      padding: 0 18px;
+      border: none;
+      font-size: 1.1em;
+      width: 280px;
+      outline: none;
+      border-radius: 30px 0 0 30px;
+      font-family: 'Exo 2', sans-serif;
+      line-height: 50px;
+    }
 
-.lead-form button {
-  height: 50px;
-  line-height: 50px;
-  padding: 0 24px;
-  background-color: #00C2B2;
-  color: white;
-  border: none;
-  border-radius: 0 25px 25px 0;
-  font-size: 1.1em;
-  font-family: 'Exo 2', sans-serif;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
+    .lead-form button {
+      height: 50px;
+      line-height: 50px;
+      padding: 0 24px;
+      background-color: #00C2B2;
+      color: white;
+      border: none;
+      border-radius: 0 30px 30px 0;
+      font-size: 1.1em;
+      font-family: 'Exo 2', sans-serif;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
 
     .lead-form button.sent {
       background-color: #2ecc71;
@@ -152,15 +154,41 @@
     }
 
     @media (max-width: 500px) {
-      h1 { font-size: 2rem; }
+      body {
+        padding: 30px 16px;
+      }
+
+      h1 {
+        font-size: 2.2rem;
+        margin-top: 10px;
+      }
+
+      p {
+        font-size: 1.1rem;
+        margin-bottom: 20px;
+      }
+
       .input-wrapper {
         flex-direction: column;
-        border-radius: 10px;
-        width: 90%;
-      }
-      .lead-form input, .lead-form button {
+        align-items: stretch;
         width: 100%;
+        height: auto;
+        gap: 8px;
+        border-radius: 16px;
+      }
+
+      .lead-form input,
+      .lead-form button {
+        width: 100%;
+        height: 48px;
         border-radius: 10px !important;
+        font-size: 1rem;
+      }
+
+      .lead-form {
+        width: 100%;
+        padding: 0 10px;
+        margin-bottom: 40px;
       }
     }
   </style>
@@ -181,48 +209,48 @@
   <p>Sign up to be a part of the TAP'D Community!</p>
 
   <form
-  action="https://formspree.io/f/xzzrzbkv"
-  method="POST"
-  class="lead-form"
-  id="leadForm"
->
-  <div class="input-wrapper">
-    <input type="email" name="email" placeholder="Enter your email" required />
-    <button type="submit" id="submitBtn">Send</button>
-  </div>
-</form>
+    action="https://formspree.io/f/xzzrzbkv"
+    method="POST"
+    class="lead-form"
+    id="leadForm"
+  >
+    <div class="input-wrapper">
+      <input type="email" name="email" placeholder="Enter your email" required />
+      <button type="submit" id="submitBtn">Send</button>
+    </div>
+  </form>
 
-<script>
-  const form = document.getElementById('leadForm');
-  const button = document.getElementById('submitBtn');
+  <script>
+    const form = document.getElementById('leadForm');
+    const button = document.getElementById('submitBtn');
 
-  form.addEventListener('submit', function(e) {
-    e.preventDefault();
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
 
-    const formData = new FormData(form);
+      const formData = new FormData(form);
 
-    fetch(form.action, {
-      method: "POST",
-      body: formData,
-      headers: {
-        'Accept': 'application/json'
-      }
-    }).then(response => {
-      if (response.ok) {
-        button.innerText = 'You are in!';
-        button.classList.add('sent');
-        button.disabled = true;
-      } else {
-        response.json().then(data => {
-          alert(data.error || "Oops! Something went wrong.");
-        });
-      }
-    }).catch(error => {
-      alert("Connection error. Please try again.");
-      console.error("Form error:", error);
+      fetch(form.action, {
+        method: "POST",
+        body: formData,
+        headers: {
+          'Accept': 'application/json'
+        }
+      }).then(response => {
+        if (response.ok) {
+          button.innerText = 'You are in!';
+          button.classList.add('sent');
+          button.disabled = true;
+        } else {
+          response.json().then(data => {
+            alert(data.error || "Oops! Something went wrong.");
+          });
+        }
+      }).catch(error => {
+        alert("Connection error. Please try again.");
+        console.error("Form error:", error);
+      });
     });
-  });
-</script>
+  </script>
 
 </body>
 </html>
