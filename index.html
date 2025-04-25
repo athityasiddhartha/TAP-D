@@ -169,31 +169,45 @@
   <h1>Coming Soon</h1>
   <p>Sign up to get notified when we go live!</p>
 
-  <form class="lead-form" id="leadForm">
-    <div class="input-wrapper">
-      <input type="email" name="email" placeholder="Enter your email" required />
-      <button type="submit" id="submitBtn">Send</button>
-    </div>
-  </form>
+  <form 
+  action="https://formspree.io/f/xzzrzbkv" 
+  method="POST" 
+  class="lead-form" 
+  id="leadForm"
+>
+  <div class="input-wrapper">
+    <input type="email" name="email" placeholder="Enter your email" required />
+    <button type="submit" id="submitBtn">Send</button>
+  </div>
+</form>
 
-  <script>
-    const form = document.getElementById('leadForm');
-    const button = document.getElementById('submitBtn');
+<script>
+  const form = document.getElementById('leadForm');
+  const button = document.getElementById('submitBtn');
 
-    form.addEventListener('submit', function(e) {
-      e.preventDefault();
+  form.addEventListener('submit', function(e) {
+    e.preventDefault();
 
-      fetch("https://formspree.io/f/xzzrzbkv", {
-        method: "POST",
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email: form.email.value })
-      });
+    const emailValue = form.querySelector('input[name="email"]').value;
 
-      button.innerText = 'Sent';
-      button.classList.add('sent');
-      button.disabled = true;
+    fetch(form.action, {
+      method: "POST",
+      headers: {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json'
+      },
+      body: JSON.stringify({ email: emailValue })
+    }).then(response => {
+      if (response.ok) {
+        button.innerText = 'Sent';
+        button.classList.add('sent');
+        button.disabled = true;
+      } else {
+        alert("Oops! Something went wrong.");
+      }
     });
-  </script>
+  });
+</script>
 
 </body>
 </html>
